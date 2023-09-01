@@ -1,0 +1,24 @@
+this is the implementation of binary tree in array implementation 
+
+
+finding the left and right son
+
+so we can arrange the array  in two cases and to find there left and right child 
+
+case 1 (0—n-1) 
+
+if (say)father=p; 
+then left_son=(2*p)+1; 
+and right_son=(2*p)+2;
+
+Case 2: 1—n
+
+if (say)father=p; 
+then left_son=(2*p); 
+and right_son=(2*p)+1;
+
+
+
+
+
+
