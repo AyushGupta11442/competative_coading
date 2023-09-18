@@ -1,20 +1,33 @@
 #include <iostream>
 #include <vector>
+#include <cctype>
+#include <cstring>
+#include <string>
 using namespace std;
 
-void reverseString(vector<char>& s) {
-	for (int i = 0; i < s.size()/2; i++) {
-		char temp = s[i];
-		s[i] = s[s.size() - 1 - i];
-		s[s.size() - 1 - i] = temp;
-		
-	}
-}
- 
 int main() {
-	vector<char> arr = { 'a','b','s','d' };
-	reverseString(arr);
-	for (auto i : arr) {
-		cout << i << endl;
+	int noup = 0;
+	string s;
+	cin >> s;
+	for (char c : s) {
+		if (isupper(c))
+		{
+			noup++;
+		}
 	}
+	if (noup > s.length() - noup) {
+		for (int i = 0; i < s.length(); i++) {
+			if (islower(s[i])) {
+				s[i] = (toupper(s[i]));
+			}
+		}
+	}
+	else {
+		for (int i = 0; i < s.length(); i++) {
+			if (isupper(s[i])) {
+				s[i] = (tolower(s[i]));
+			}
+		}
+	}
+	cout << s;
 }
