@@ -1,3 +1,2 @@
 ﻿  ConsoleApplication1.cpp
-C:\Users\ayush\Desktop\competative coading\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(10,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   ConsoleApplication1.vcxproj -> C:\Users\ayush\Desktop\competative coading\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
