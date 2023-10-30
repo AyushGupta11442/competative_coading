@@ -1,26 +1,22 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include  <iostream>
+
 using namespace std;
 
-void main() {
-	int n;
-	cin >> n;
-	int sum = 0;
-	vector<int> vec(n);
-	for (int i = 0; i < n; i++)
-	{
-		cin >> vec[i];
-		sum += vec[i];
+int main() {
+	int num, pos; 
+	cin >> num >> pos;
+	int output;
+	if (pos >= num / 2) {
+		for (int i = 2; i <= num && pos-- ; i += 2) {
+			output = i;
+		}
 	}
-	sort(vec.begin(), vec.end());
-	int sumofm = 0;
-	int pickcoin = 0;
-	for (int i = n - 1; i >= 0 && sumofm <= (sum /2); i--) {
-		sumofm += vec[i];
-		pickcoin++;
+	else {
+		for (int i = 1; i <= num && pos--; i += 2) {
+			output = i;
+		}
 	}
-	if ( sumofm > (sum / 2)) {
-		cout << pickcoin;
-	}
+	cout << output;
+
 }
+ 

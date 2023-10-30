@@ -1,3 +1,2 @@
 ﻿  ConsoleApplication1.cpp
-C:\Users\ayush\Desktop\competative_coading\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(6,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
   ConsoleApplication1.vcxproj -> C:\Users\ayush\Desktop\competative_coading\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe

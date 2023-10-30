@@ -5,7 +5,7 @@
 #include <algorithm>
 using namespace std;
 
-void main() {
+int  main() {
 	int n;
 	cin >> n;
 	int sum = 0;
