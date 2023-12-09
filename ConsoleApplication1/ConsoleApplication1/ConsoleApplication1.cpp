@@ -1,16 +1,22 @@
-#include <iostream>
-
+#include<iostream>
+#include<vector>
+#include<algorithm>
 using namespace std;
 
 int main() {
 	int n;
 	cin >> n;
-	int total = 0;
-	for (int i = 0; i < i * 3; i++) {
-		int temp;
-		cin >> temp;
-		total += temp;
-	
+	vector<int> arr(n);
+	for (int i = 0; i < n; i++) {
+		cin >> arr[i];
 	}
-	cout << (total == 0) ? "YES" : "NO";
+	sort(arr.begin(), arr.end());
+	for (int a : arr) {
+		cout << a << " ";
+	}
+
+	
 }
+
+
+
