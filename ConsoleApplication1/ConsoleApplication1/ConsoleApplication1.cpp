@@ -1,34 +1,60 @@
 #include <iostream>
 #include<vector>
-
 using namespace std;
+int binarysearch(int arr[], int l, int r, int x)
+{
+    if (r >= l) {
+        int mid = l + (r - l) / 2;
 
-vector<vector<int>> threeSum(vector<int>& nums) {
-	vector<vector<int>> toreturn;
-	int first = 0;
-	int last = nums.size() -1;
-	while (first + 1 < last) {
-		int mid = first + 1;
-		last = nums.size() - 1 - first;
-		while (mid < last) {
-			if (nums[first] + nums[mid] + nums[last] == 0) {
-				toreturn.push_back({ first , mid , last });
-				int firstt = nums[first];
-				int second = nums[mid];
-				int third = nums[last];
-				cout << nums[first] << " " << nums[mid] << " " << nums[last];
-			}
-			mid++;
-			last--;
-		}
-		first++;
-		
-	}
-	return toreturn;
-	
+        // If the element is present at the middle
+        // itself
+        if (arr[mid] == x)
+            return mid;
+
+        // If element is smaller than mid, then
+        // it can only be present in left subarray
+        if (arr[mid] > x)
+            return binarysearch(arr, l, mid - 1, x);
+
+        // Else the element can only be present
+        // in right subarray
+        return binarysearch(arr, mid + 1, r, x);
+    }
+
+    // We reach here when element is not
+    // present in array
+    return -1;
 }
 
+
+int smallest(int arr[], int pos) {
+    while (arr[pos] == arr[pos - 1]) {
+        pos--;
+    }
+    return pos;
+}
+int largest(int arr[], int pos) {
+    while (arr[pos] == arr[pos + 1]) {
+        pos++;
+    }
+    return pos;
+}
+
+
+vector<int> findd(int arr[], int n, int x)
+{
+    int pos = binarysearch(arr, 0, n, x);
+    vector<int> toreturn;
+    toreturn.push_back(smallest(arr, pos));
+    toreturn.push_back(largest(arr, pos));
+
+    return toreturn;
+}
+
+
+
 int main() {
-	vector<int> arr = { -1,0,1,2,-1,-4 };
-	threeSum(arr);
+    int arr[] = { 1, 3, 5, 5, 5, 5, 7, 123, 125 };
+    vector<int> arrr = findd(arr, 9, 7);
+    cout << arrr[0] <<" "<< arrr[1];
 }
