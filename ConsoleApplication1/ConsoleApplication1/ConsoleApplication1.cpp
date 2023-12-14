@@ -1,22 +1,39 @@
-#include <iostream>
-#include <vector>
-
+#include<iostream>
+#include<string>
+#include<vector>
 using namespace std;
 
-vector<int> valueEqualToIndex(int arr[], int n) {
-	vector<int> toreturn;
-	for (int i = 0; i < n; i++) {
-		if (i + 1 == arr[i]) {
-			toreturn.push_back(i+1);
+
+string reverseWords(string s) {
+	string temp = "";
+	vector<string> dummystring = {};
+	for (int i = 0; i < s.size(); i++) {
+		if (s[i] == ' ' && temp.size() > 0) {
+			dummystring.push_back(temp);
+			temp = "";
+		}
+		else {
+			temp += s[i];
+		}
+	}
+	string toreturn = "";
+	for (int i = dummystring.size() - 1; i >= 0; i--) {
+		if (i = (dummystring.size() - 1)) {
+			toreturn += dummystring[i];
+		}
+		else {
+			toreturn = toreturn + " " + dummystring[i];
 		}
 	}
 	return toreturn;
 }
 
+
+
 int main() {
-	int arr[] = { 15,2 ,45, 12, 7 };
-	vector<int> arrr = valueEqualToIndex(arr, 5);
-	for (int i = 0; i < arrr.size(); i++) {
-		cout << arrr[i] << " ";
+	string str = "a good   example";
+	string prints = reverseWords(str);
+	for (char a : prints) {
+		cout << prints;
 	}
 }
