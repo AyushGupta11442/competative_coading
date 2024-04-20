@@ -1,28 +1,17 @@
-#include<iostream>
-#include <cstdlib>
-#include <ctime>
+#include <iostream>
+#include <string>
 using namespace std;
-int random_number(int a, int b) {
-	srand(time(nullptr));
-	return rand() % (b - a + 1) + a;
-}
 
 int main() {
 	int t;
 	cin >> t;
+	int maxpeople = 0;
+	int noPeople = 0;
 	while (t--) {
-		int a, b, c, d;
-		cin >> a >> b >> c >> d;
-		int x = random_number(a, b);
-		int y = INT_MIN;
-		while (x > y) {
-			y = random_number(b, c);
-		}
-		int z = INT_MIN;
-		while (y > z) {
-			z = random_number(c, d);
-		}
-		cout << x << " " << y << " " << z << endl;
-
+		int a, b;
+		cin >> a >> b;
+		noPeople = (noPeople - a) + b;
+		maxpeople = max(noPeople, maxpeople);
 	}
+	cout << maxpeople;
 }
