@@ -1,17 +1,22 @@
 #include <iostream>
-#include <string>
+
 using namespace std;
 
+
 int main() {
-	int t;
-	cin >> t;
-	int maxpeople = 0;
-	int noPeople = 0;
-	while (t--) {
-		int a, b;
-		cin >> a >> b;
-		noPeople = (noPeople - a) + b;
-		maxpeople = max(noPeople, maxpeople);
+	int  n;
+	cin >> n;
+	int num = 0;
+	while (n--) {
+		string s;
+		cin >> s;
+		if (s[0] == '+' || s[2] == '+') {
+			num++;
+		} 
+		else if(s[0] == '-' || s[2] == '-') {
+			num--;
+		}
+		
 	}
-	cout << maxpeople;
+	cout << num;
 }
