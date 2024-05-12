@@ -1,28 +1,23 @@
 #include <iostream>
-#include <climits>
-
+#include<set>
+#include <string>
 using namespace std;
 
-int main() {
-    int t;
-    cin >> t;
-    while (t--) {
-        int n;
-        cin >> n;
-        int left = 0, right = n;
-        while (left < right) {
-            int mid = (left + right) / 2;
-            long long noOfCoin = 1LL * mid * (mid + 1); // Corrected calculation
-            if (noOfCoin == n) {
-                cout << mid << endl;
-                break;
-            }
-            else if (noOfCoin > n) {
-                right = mid - 1;
-            }
-            else if (noOfCoin < n) {
-                left = mid + 1;
-            }
-        }
+bool check(string s) {
+    set<char> set;
+    for (char c : s) {
+        set.insert(c);
     }
+    return s.size() == set.size();
+}
+
+int main() {
+    int year;
+    cin >> year;
+    string strYear = std::to_string(year);
+    do {
+        year++;
+        strYear = std::to_string(year);
+    } while (!check(strYear));
+    cout << strYear << endl;
 }
