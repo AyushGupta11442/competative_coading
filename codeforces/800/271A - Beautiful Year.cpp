@@ -13,6 +13,7 @@ bool check(string s) {
 
 int main() {
     int year;
+    // edited
     cin >> year;
     string strYear = std::to_string(year);
     do {
